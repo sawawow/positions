@@ -1,0 +1,145 @@
+.block{
+    padding: 16px;
+    width: 100px;
+    height: 100px;
+}
+/* Static это селектор по умолчанию и не убирает из нормального потока */
+.static{
+    position: static;
+    background: brown;
+    color: cornsilk;
+    font-size: 35px;
+}
+/* relative не по умолчанию 
+ не убирает из нормального потока
+его верхняя граница служит точкой отсчета для дочерних 
+элементов с position absolute */
+.relative{
+    position: relative;
+    background: crimson;
+    color: cyan;
+    font-size: 40px;
+    top: 20px;
+    right: 25px;
+    z-index: 90;
+}
+/* Fixed уберает из нормального потока
+координаты смещения задаются относительно 
+окна браузера */
+.fixed{
+    position: fixed;
+    background: rebeccapurple;
+    color: royalblue;
+    font-size: 35px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 20;
+}
+body{
+    height: 20000px;
+}
+/* Absolute убирает из нормального потока
+координаты смещения задаются относительно документа
+(верхнего левого угла body) */
+.absolute{
+    position: absolute;
+    background: saddlebrown;
+    color: royalblue;
+    font-size: 38px;
+    top: 20px;
+    right: 20px;
+}
+/*  */
+.sticky{
+    position: sticky;
+    background: salmon;
+    color: sandybrown;
+    font-size: 38px;
+    top: 200px;
+    right: 50px;
+}
+.card{
+    position: relative;
+    padding: 20px;
+    background: skyblue;
+    border:1px solid slategrey;
+    width: 320px;
+    height: 320px;
+}
+.card > .close-btn{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    border-radius: 50%;
+    border: 2px solid red;
+    cursor: pointer;
+    padding: 10px;
+}
+span{
+    display: block;
+    background: royalblue;
+    flex-direction: column;
+}
+/* 
+display;
+block - блочный элемент 
+inline-block - строчный элемент
+none - элемент не отображается*/
+/* 
+flex-box - флекс контейнер
+grid - сетка
+ */
+ .conteiner{
+    display: flex;
+    flex-direction: column;/* свойство отвечает за направление главной оси*/
+    flex-direction: column-reverse;
+    flex-direction: row;
+    flex-direction: row-reverse;
+
+    justify-content: space-between;
+    justify-content: space-evenly;
+    justify-content: space-around;
+ }
+ .conteiner > div{
+     width: 100px;
+     height: 100px;
+     background: tomato;
+     margin: 5px;
+ }
+ .two{
+     flex:  2 5 450px;
+ }
+ .one{
+    flex: 1 2;
+ }
+ .three{
+    flex: 3 4;
+ }
+ .template{
+     background: khaki;
+     display: grid;
+     width: 400px;
+     height: 400px;
+     grid-template-areas:
+     "header header"
+     "menu content";
+     grid-template-columns: 1fr 6fr;
+     grid-template-rows: 1fr 3fr;
+     gap: 20px 3px;
+
+ }
+ .header{
+    grid-area: header;
+    border: 1px solid red;
+ }
+ .menu{
+    grid-area: menu;
+    border: 1px solid red;
+ }
+ .content{
+    grid-area: content;
+    border: 1px solid red;
+ }
+ .template > div{
+     background: royalblue;
+ }
